@@ -3,6 +3,12 @@
 % image, then, it will check its neighbors to see if they are also on the
 % edge of the image while connecting points.
 %
+% Limitations: The code would fail if there isn'y continuous points inside
+% the image along the outside.
+%       Also, because the algorithm stops after it crosses the center line
+%       twice, if there are points that go across on 256 it will terminate
+%       early.
+%
 % Function created on April 11th, 2016 by Eric Braun 10121660.
 
 
@@ -76,8 +82,9 @@ while (count ~= 2)
     % Code to move straight right
     
     % Check point to the right if it is white and point right and above is
-    % black. If so, move right to white
-    if (Prostate(point(1), point(2) + 1) > 10 && Prostate(point(1) - 1, point(2) + 1) < 10)
+    % black. If so, move right to white (also check above for black to stop
+    % getting stuck later)
+    if (Prostate(point(1), point(2) + 1) > 10 && Prostate(point(1) - 1, point(2) + 1) < 10 && Prostate(point(1)-1, point(2)) < 10)
         point = [point(1), point(2) + 1];
         Points(i,:) = point;
         plot(point(2),point(1),'go');
