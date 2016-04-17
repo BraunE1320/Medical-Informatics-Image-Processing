@@ -1,0 +1,25 @@
+
+function [] = ContourArea1(img)
+
+iRange = size(img,1);
+jRange = size(img,2);
+Area = 0;
+
+Points = SegmentImage2(img);
+
+for i = 1:iRange
+    for j = i:jRange
+        count = 0;
+        up = j;
+        while (up <= jRange)
+            temp = ismember(Points,up);
+            if (nnz(temp) > 0)
+                count = count + 1;
+            end
+            up = up + 1;
+        end
+        if (
+        
+
+
+end

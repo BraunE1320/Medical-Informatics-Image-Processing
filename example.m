@@ -5,5 +5,6 @@ img = nrrdread('MRHeadSub.nrrd');
 img.metaData
 
 % Display a slice
+
 image(img.pixelData(:,:,1));
 colormap gray
