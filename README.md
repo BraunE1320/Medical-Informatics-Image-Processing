@@ -5,3 +5,5 @@ Program to remove table from medical imaging, allow window-level filtering, and 
 Using the radial segmentation, A 3D mesh reconstruction is made using CAT scan images of a head.
 
 The program also uses Hausdorff distance and Dice similarity to determine how similar two images are.
+
+Write up, examples, and images can be found in CISC472.pdf
